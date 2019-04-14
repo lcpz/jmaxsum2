@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance>
+  <presentation name="simpleGraphColouring" type="DCOP" benchmark="RandomDCOP" model="Simple" constraintModel="TKC" format="XDisCSP 1.0" />
+  <agents nbAgents="3">
+    <agent name="A1" id="1" description="brown" />
+    <agent name="A2" id="2" description="jones" />
+    <agent name="A3" id="3" description="smith" />
+  </agents>
+  <domains nbDomains="1">
+    <domain name="D1" nbValues="2">0..1</domain>
+  </domains>
+  <variables nbVariables="3">
+    <variable agent="A1" name="X1.1" id="1" domain="D1" description="variable 1.1" />
+    <variable agent="A2" name="X2.1" id="2" domain="D1" description="variable 2.1" />
+    <variable agent="A3" name="X3.1" id="3" domain="D1" description="variable 3.1" />
+  </variables>
+  <constraints nbConstraints="3" initialCost="1" maximalCost="infinity">
+    <constraint name="C0" model="TKC" arity="2" scope="X1.1 X2.1" reference="R0" />
+    <constraint name="C1" model="TKC" arity="3" scope="X1.1 X2.1 X3.1" reference="R1" />
+    <constraint name="C2" model="TKC" arity="2" scope="X2.1 X3.1" reference="R0" />
+  </constraints>
+  <relations nbRelations="3">
+    <relation name="R0" arity="2" nbTuples="2" semantics="soft" defaultCost="infinity">1:1 0|1:0 1</relation>
+    <relation name="R1" arity="3" nbTuples="2" semantics="soft" defaultCost="infinity">1:0 1 0|1:1 0 1</relation>
+  </relations>
+  <GuiPresentation type="DCOP" benchmark="RandomDCOP" name="simpleGraphColouring" model="TKC" nbAgents="3" domainSize="2" density="50" tightness="0" nbConstraints="3" nbTuples="2" />
+</instance>
